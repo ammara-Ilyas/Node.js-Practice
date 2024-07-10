@@ -1,0 +1,10 @@
+//////// to open node repl  (read eval print loop)
+
+node
+
+to close relp
+crtl+D  or .exit
+
+
+mkdir   to make folder
+type null > index.js

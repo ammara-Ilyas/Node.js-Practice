@@ -1,0 +1,2 @@
+to make new file and write text in it use it
+   to write more text use appendFile
