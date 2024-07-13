@@ -8,3 +8,6 @@ crtl+D  or .exit
 
 mkdir   to make folder
 type null > index.js
+
+
+cd "C:\Users\AMC\Desktop\Node\OS module"   to move inside folderS
