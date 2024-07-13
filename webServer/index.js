@@ -1,4 +1,8 @@
 const http = require("http");
+const fs = require("fs");
+const path = require("path");
+
+const { dirname } = require("path");
 // const url=require("url")
 const server = http.createServer((req, res) => {
   ///////req.url (/contact,/about etc)
@@ -11,6 +15,19 @@ const server = http.createServer((req, res) => {
   } else if (req.url == "/product") {
     res.write("Hello from product page");
     res.end();
+  } else if (req.url == "/userApi") {
+    // res.write("Hello from product page");
+    const filePath = path.join(__dirname, "userData", "userApi.json");
+
+    fs.readFile(filePath, "utf8", (err, data) => {
+      if (err) {
+        console.error(err);
+        return;
+      }
+      console.log(JSON.parse(data));
+      res.writeHead(200, { "Content-type": "application/json" });
+      res.end(data);
+    });
   } else {
     res.writeHead(404, { "Content-type": "text/html" });
     res.end("<h1>Hello from error page</h1>");
