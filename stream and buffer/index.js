@@ -17,6 +17,8 @@ server.on("request", (req, res) => {
     res.write("404 error, page is not found");
     res.end();
   });
+  /////3rd way
+  readStrem.pipe(res);
 });
 
 server.listen(8000, "127.0.0.1");
